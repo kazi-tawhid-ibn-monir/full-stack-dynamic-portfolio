@@ -9,7 +9,10 @@
   @include('partials.heade')
   @include('partials.sidebar')
 
+  <div style="margin-top: 80px;">
+    
   @yield('content')
+ </div>
   @include('partials.footer')
 </body>
 </html>

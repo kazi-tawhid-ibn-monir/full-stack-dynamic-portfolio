@@ -71,7 +71,7 @@ a:hover {
     <div class="navbar-container">
         <div class="navbar-flex">
             <div class="navbar-div">
-                <a href="/">Kazi Tawhid Ibn Monir-</a>
+                <a href="/">Kazi Tawhid Ibn Monir</a>
             </div>
  
             <div class="navbar-nav">
