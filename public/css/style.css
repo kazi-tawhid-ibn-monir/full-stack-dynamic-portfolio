@@ -20,10 +20,17 @@ body {
     left: 0;
     z-index: 1000;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* brand left */
     align-items: center;
 }
 
+/* Left side: dots + name */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Brand name */
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: 700;
@@ -40,11 +47,13 @@ body {
     opacity: 0.9;
 }
 
+/* Top nav links (right side) */
 .nav-links {
     display: flex;
     list-style: none;
     gap: 2.5rem;
     align-items: center;
+    margin-left: auto; /* push to right */
 }
 
 .nav-links a {
@@ -84,7 +93,25 @@ body {
     width: 100%;
 }
 
-/* Mobile Menu Toggle */
+/* 3-dot sidebar toggle button in navbar */
+.sidebar-toggle {
+    margin-right: 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sidebar-toggle span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #10b981;
+}
+
+/* Optional: mobile menu toggle for top nav links */
 .menu-toggle {
     display: none;
     background: none;
@@ -108,6 +135,12 @@ body {
 main {
     margin-top: 80px;
     padding: 3rem 2rem;
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+}
+
+main.with-sidebar {
+    margin-left: 220px;
 }
 
 .container {
@@ -115,8 +148,60 @@ main {
     margin: 0 auto;
 }
 
+/* Layout wrapper for sidebar + content */
+.main-wrapper {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: linear-gradient(135deg, #f0fdf4 40%, #c9ffe3 100%);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 16px rgba(16, 185, 129, 0.08);
+    position: fixed;
+    top: 80px;
+    left: -260px; /* hidden by default */
+    overflow-y: auto;
+    z-index: 900;
+    transition: left 0.3s ease;
+}
+
+/* When sidebar is open */
+.sidebar.active {
+    left: 0;
+}
+
+/* Sidebar links */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 1.5rem;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #059669;
+    font-weight: 600;
+    font-size: 1rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background 0.18s, color 0.18s;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+    background: linear-gradient(135deg, #10b9813a 0%, #05966912 100%);
+    color: #10b981;
+}
+
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 950px) {
     .navbar {
         flex-wrap: wrap;
         padding: 1rem;
@@ -138,6 +223,7 @@ main {
         margin-top: 1rem;
         padding-top: 1rem;
         border-top: 2px solid #e5e7eb;
+        margin-left: 0;
     }
 
     .nav-links.active {
@@ -146,5 +232,13 @@ main {
 
     .nav-links a {
         padding: 0.5rem 0;
+    }
+
+    .main-wrapper {
+        flex-direction: column;
+    }
+
+    main.with-sidebar {
+        margin-left: 0;
     }
 }

@@ -8,13 +8,15 @@
 </head>
 <body>
     @include('partials.navbar')
-
-    <main>
-        <div class="container">
-            @yield('content')
-        </div>
-    </main>
-
+    <div class="main-wrapper">
+        @include('partials.sidebar')
+        <main>
+            <div class="container">
+                @yield('content')
+            </div>
+        </main>
+    </div>
     <script src="{{ asset('js/script.js') }}"></script>
 </body>
+
 </html>

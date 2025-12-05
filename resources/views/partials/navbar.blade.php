@@ -1,6 +1,14 @@
 <nav class="navbar">
-    <a href="{{ route('home') }}" class="navbar-brand">Kazi Tawhid Ibn Monir</a>
-    
+    <div class="navbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="{{ route('home') }}" class="navbar-brand">Kazi Tawhid Ibn Monir</a>
+    </div>
+
     <button class="menu-toggle" id="menuToggle">
         <span></span>
         <span></span>
