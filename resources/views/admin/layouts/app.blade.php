@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('css/components.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin-btn.css') }}">
 </head>
 <body>
     <!-- Header -->
@@ -20,24 +21,15 @@
 
     <!-- Navigation -->
     <nav>
-    <ul>
-        <li><a href="/" class="@if(request()->is('/')) active @endif">Home</a></li>
-        <li><a href="/projects" class="@if(request()->is('projects')) active @endif">Projects</a></li>
-        <li><a href="/skills" class="@if(request()->is('skills')) active @endif">Skills</a></li>
-        <li><a href="/academic" class="@if(request()->is('academic')) active @endif">Academic</a></li>
-        <li><a href="/achievements" class="@if(request()->is('achievements')) active @endif">Achievements</a></li>
-        <li><a href="/about" class="@if(request()->is('about')) active @endif">About</a></li>
-
-        {{-- Admin button in navbar --}}
-        <li>
-            <a href="{{ route('admin.login') }}"
-               style="margin-left: 1rem; padding: 6px 12px; border-radius: 4px;
-                      background: #667eea; color: #fff; font-weight: 600;">
-                🔐 Admin
-            </a>
-        </li>
-    </ul>
-</nav>
+        <ul>
+            <li><a href="/" class="@if(request()->is('/')) active @endif">Home</a></li>
+            <li><a href="/projects" class="@if(request()->is('projects')) active @endif">Projects</a></li>
+            <li><a href="/skills" class="@if(request()->is('skills')) active @endif">Skills</a></li>
+            <li><a href="/academic" class="@if(request()->is('academic')) active @endif">Academic</a></li>
+            <li><a href="/achievements" class="@if(request()->is('achievements')) active @endif">Achievements</a></li>
+            <li><a href="/about" class="@if(request()->is('about')) active @endif">About</a></li>
+        </ul>
+    </nav>
 
     <!-- Main Content -->
     <main>
@@ -56,5 +48,10 @@
             <a href="#">Email</a>
         </div>
     </footer>
+
+    <!-- Admin Button (Fixed) -->
+    <a href="{{ route('admin.login') }}" class="admin-btn" title="Admin Panel">
+        🔐 Admin
+    </a>
 </body>
 </html>

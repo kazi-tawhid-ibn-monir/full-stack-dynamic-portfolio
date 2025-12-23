@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Project;
 use Illuminate\View\View;
 
 class ProjectController extends Controller
 {
     public function index(): View
     {
-        return view('pages.projects');
+        $projects = Project::all();
+        return view('pages.projects', compact('projects'));
     }
 }
