@@ -2,16 +2,27 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SkillsController;
-use App\Http\Controllers\ProjectsController;
-use App\Http\Controllers\AcademicsController;
-use App\Http\Controllers\AchievementsController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SkillController;
+use App\Http\Controllers\AcademicController;
+use App\Http\Controllers\AchievementController;
 use App\Http\Controllers\AboutController;
 
 
+// Home Page Route
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/skills', [SkillsController::class, 'index'])->name('skills');
-Route::get('/projects', [ProjectsController::class, 'index'])->name('projects');
-Route::get('/academic', [AcademicsController::class, 'index'])->name('academic');
-Route::get('/achievements', [AchievementsController::class, 'index'])->name('achievements');
+
+// Projects Page Route
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
+
+// Skills Page Route
+Route::get('/skills', [SkillController::class, 'index'])->name('skills');
+
+// Academic Page Route
+Route::get('/academic', [AcademicController::class, 'index'])->name('academic');
+
+// Achievements Page Route
+Route::get('/achievements', [AchievementController::class, 'index'])->name('achievements');
+
+// About Page Route
 Route::get('/about', [AboutController::class, 'index'])->name('about');
