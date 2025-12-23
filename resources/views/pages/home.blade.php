@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
-<h2>🏠 Welcome to My Portfolio</h2>
+<h2>Kazi Tawhid Ibn Monir</h2>
 
 <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 2rem;">
     Hi! I'm a passionate Computer Science student from Parbatipur, Rangpur Division, Bangladesh. 

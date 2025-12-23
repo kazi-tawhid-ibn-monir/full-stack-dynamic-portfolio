@@ -14,7 +14,7 @@
 <body>
     <!-- Header -->
     <header>
-        <h1>📱 My Portfolio</h1>
+        <h1>📱 Kazi Tawhid</h1>
         <p>Computer Science Student | Web Developer | Compiler Enthusiast</p>
     </header>
 
